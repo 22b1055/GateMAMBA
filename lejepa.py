@@ -102,7 +102,7 @@ def find_latest_epoch_ckpt(log_dir: str, dataset_name: str):
 
 
 # ---------------------------------------------------------------------------
-# SIGReg — unchanged
+# SIGReg
 # ---------------------------------------------------------------------------
 class SIGReg(nn.Module):
     def __init__(self, proj_dim, knots=17, num_projections=512):
@@ -129,7 +129,7 @@ class SIGReg(nn.Module):
 
 
 # ---------------------------------------------------------------------------
-# HSI_MambaEncoder — unchanged
+# HSI_MambaEncoder
 # ---------------------------------------------------------------------------
 class HSI_MambaEncoder(nn.Module):
     def __init__(
@@ -380,7 +380,7 @@ def main(cfg: DictConfig):
     print(f"Dataset : {dataset_name}  |  classes: {train_ds.classes}  |  bands: {train_ds.bands}")
     print(cfg)
 
-    # ---- build all modules (always, regardless of resume) ----------------
+    # ---- build all modules ----------------
     net = HSI_MambaEncoder(
         bands=train_ds.bands,
         patch_size=train_ds.patch,
